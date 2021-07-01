@@ -2,16 +2,48 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+ReactDOM.render(<App />, document.getElementById('root'));
+registerServiceWorker();
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+
+// First Store
+// const counter = (state = 'hello') => ({ welcome: state });
+// const store = createStore(counter);
+// console.log(store.getState());
+
+// First Reducer & Actions
+// const counter = (state = 'Hello World', action) => {
+//   switch (action.type) {
+//   case 'HI':
+//     return 'Hi Scott';
+//   case 'HELLO':
+//     return 'Hello, how are you?';
+//   default:
+//     return 'Hello world';
+//   }
+// };
+// const store = createStore(counter);
+// store.dispatch({
+//   type: 'HELLO',
+// });
+// console.log(store.getState());
+
+// Second Reducer & Actions
+// const counter = (state = { greeting: 'hi', otherState: 'some stuff' }, action) => {
+//   switch (action.type) {
+//   case 'HI':
+//     return { ...state, greeting: `Hi, ${action.name}` };
+//   case 'HELLO':
+//     return { ...state, greeting: `Hello ${action.name}, how are you?'` };
+//   default:
+//     return { ...state, greeting: 'Hello world' };
+//   }
+// };
+// const store = createStore(counter);
+// store.dispatch({
+//   type: 'HELLO',
+//   name: 'Scott',
+// });
+// console.log(store.getState());
