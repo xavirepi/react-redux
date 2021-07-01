@@ -6,18 +6,20 @@ import {
   Switch,
   Link,
 } from 'react-router-dom';
-import { Provider } from 'react-redux';
+import { Provider } from 'react-redux'; // Import provider
 import { createStore } from 'redux';
 
 import logo from './logo.svg';
 import './App.css';
 
+import rootReducer from './rootReducer';
+
 import MoviesList from './MoviesList';
 import MovieDetail from './MovieDetail';
 
-const hello = () => ('hello');
-const store = createStore(hello);
+const store = createStore(rootReducer); // Store
 
+// Provider wraps the entire application to make Redux available anywhere via connect
 const App = () => (
   <Provider store={store}>
     <Router>
